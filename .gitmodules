@@ -1,0 +1,9 @@
+[submodule "llama-city"]
+	path = llama-city
+	url = https://github.com/Datagram-Group/llama-city.git
+[submodule "llama-citizen"]
+	path = llama-citizen
+	url = https://github.com/Datagram-Group/llama-citizen.git
+[submodule "datagram-intelligence"]
+	path = datagram-intelligence
+	url = https://github.com/Datagram-Group/datagram-intelligence.git
