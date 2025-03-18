@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  llama-city:
+    build:
+      context: ./llama-city
+    networks:
+      - app-network
+
+  llama-citizen:
+    build:
+      context: ./llama-citizen
+    depends_on:
+      - llama-city
+    networks:
+      - app-network
+
+  datagram-intelligence:
+    build:
+      context: ./datagram-intelligence
+    networks:
+      - app-network
+    depends_on:
+      - llama-city
+
+networks:
+  app-network:
+    driver: bridge
