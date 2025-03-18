@@ -26,8 +26,15 @@ services:
       - llama-city
     networks:
       - app-network
+    restart: always
+
+  ollama:
+    image: ollama/ollama:latest
+    networks:
+      - app-network
     ports:
       - "11434:11434"
+    restart: unless-stopped
 
 networks:
   app-network:
