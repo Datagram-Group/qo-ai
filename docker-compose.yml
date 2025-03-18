@@ -1,11 +1,23 @@
-version: '3.8'
-
 services:
   llama-city:
     build:
       context: ./llama-city
     networks:
       - app-network
+    ports:
+      - "8080:8080"
+      - "50051:50051"
+
+  datagram-intelligence:
+    build:
+      context: ./datagram-intelligence
+    networks:
+      - app-network
+    ports:
+      - "3000:3000"
+      - "50052:50052"
+    depends_on:
+      - llama-city
 
   llama-citizen:
     build:
@@ -14,14 +26,8 @@ services:
       - llama-city
     networks:
       - app-network
-
-  datagram-intelligence:
-    build:
-      context: ./datagram-intelligence
-    networks:
-      - app-network
-    depends_on:
-      - llama-city
+    ports:
+      - "11434:11434"
 
 networks:
   app-network:
