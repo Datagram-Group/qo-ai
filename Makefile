@@ -1,10 +1,9 @@
 update:
 	git submodule update --remote
 
-pull:
-	git submodule update --init --recursive
-
 build:
+	@echo "Updating git submodules..."
+	git submodule update --init --recursive
 	docker-compose up --build
 
 start:
