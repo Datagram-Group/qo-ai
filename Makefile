@@ -1,6 +1,9 @@
 update:
 	git submodule update --remote
 
+pull:
+	git submodule update --init --recursive
+
 build:
 	docker-compose up --build
 
