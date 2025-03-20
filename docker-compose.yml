@@ -26,6 +26,8 @@ services:
       - llama-city
     networks:
       - app-network
+    ports:
+      - "11434:11434"
     restart: always
 
 networks:
